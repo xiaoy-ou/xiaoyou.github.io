@@ -1,0 +1,251 @@
+<link rel="stylesheet" href="css/style.css">
+
+<canvas id="starCanvas"></canvas>
+
+
+<!-- 第一幕 -->
+<main class="hero">
+
+    <p class="tag">
+        ✨ 给你的一份小惊喜
+    </p>
+
+    <h1>
+        Happy Birthday
+    </h1>
+
+    <p class="date">
+        农历 · 六月廿四
+        2026
+    </p>
+
+    <p class="subtitle">
+        放心，不是什么广告（⁠≧⁠▽⁠≦⁠）
+    </p>
+
+    <button id="startBtn">
+        开始旅程
+    </button>
+
+</main>
+
+
+<!-- 第二幕 -->
+<div class="story-screen">
+
+    <div class="story-content">
+
+        <p>✨ hi，欢迎来到这里</p>
+
+        <p>
+            本来想说一句生日快乐的，好像有点单调了吧....
+        </p>
+
+        <p>
+            emmm, so 还是花了点时间做了一个生日礼物🥳
+        </p>
+
+        <p>
+            就偷偷准备一个特别一点的生日惊喜。
+        </p>
+
+        <p>
+            （虽然是第一次做，我觉得我已经拉满了😎）
+        </p>
+
+        <p>
+            如果有bug，请发给我。
+        </p>
+
+        <button id="continueBtn">
+            🎉继续探索🎉
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- 第三幕 -->
+<div class="gift-screen">
+
+    <div class="gift-container">
+
+        <div class="gift-box" id="giftBox">
+
+            <div class="gift-lid"></div>
+
+            <div class="gift-body">
+                🎁
+            </div>
+
+            <div class="gift-sparkles">
+                <span>✨</span>
+                <span>✨</span>
+                <span>✨</span>
+                <span>✨</span>
+                <span>✨</span>
+            </div>
+
+        </div>
+
+
+        <div class="birthday-message">
+
+            <h2 class="line1">
+                嘿！
+            </h2>
+
+            <h1 class="line2">
+                生日快乐 🎂
+            </h1>
+
+            <p class="line3">
+                正在发送生日祝福祝福<br>
+                请注意查收 ...
+            </p>
+
+
+            <div class="wish-wall">
+
+                <div class="wish-card wish1">
+
+                    <div class="wish-icon">
+                        ⭐
+                    </div>
+
+                    <p class="line4">
+                        祝你天天開心，每天都有好心情。 ✨
+                    </p>
+
+                </div>
+
+
+                <div class="wish-card wish2">
+
+                    <div class="wish-icon">
+                        🌙
+                    </div>
+
+                    <p class="line5">
+                        祝你每天都有<br>
+                        开心的事发生
+                    </p>
+
+                </div>
+
+
+                <div class="wish-card wish3">
+
+                    <div class="wish-icon">
+                        🎂
+                    </div>
+
+                    <p class="line6">
+                        希望烦恼看到你之后<br>
+                        自觉绕路离开
+                    </p>
+
+                </div>
+
+
+                <div class="wish-card wish4">
+
+                    <div class="wish-icon">
+                        🚀
+                    </div>
+
+                    <p class="line7">
+                        emmm恭喜..<br>
+                        你又老了一岁 🤪
+                    </p>
+
+                </div>
+
+
+                <div class="wish-card wish5">
+
+                    <div class="wish-icon">
+                        🎁
+                    </div>
+
+                    <p class="line8">
+                        祝你生日快乐<br>
+                        生活顺利。♥️
+                    </p>
+
+                </div>
+
+
+                <p class="final-text">
+                    <br><br>
+                    最后一个小惊喜<br>
+                    ⬇️⬇️⬇️⬇️⬇️
+                    <br><br>
+
+                    <button id="starTrigger">
+                        🌌 打开最后一个惊喜
+                    </button>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- 第四幕 -->
+<div class="star-text-screen">
+
+    <canvas id="textCanvas"></canvas>
+
+    <div class="space-stars">
+
+        <span>✦</span>
+        <span>✧</span>
+        <span>✦</span>
+        <span>✧</span>
+        <span>✦</span>
+        <span>✧</span>
+        <span>✦</span>
+
+    </div>
+
+    <div class="star-title">
+        ✨ 祝小佑天天开心 ✨
+    </div>
+
+    <div class="star-letter">
+
+        <div class="star-letter">
+
+             这一页故事写到这里但你的旅程还在继续。<br>
+       希望你每天都有好心情，毕竟快乐才是人生主线任务。O'V'O生日快乐哦 · ✨
+
+</div>
+
+    </div>
+
+</div>
+
+
+<audio id="bgMusic" loop>
+    <source src="music/birthday.mp3">
+</audio>
+
+<div id="musicBtn">
+    🎵
+</div>
+
+
+<script src="js/utils.js"></script>
+<script src="js/meteor.js"></script>
+<script src="js/stars.js"></script>
+<script src="js/gift.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/starMessage.js"></script>
+<script src="js/starText.js"></script>
+<script src="js/main.js"></script>
