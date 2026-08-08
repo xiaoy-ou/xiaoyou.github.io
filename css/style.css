@@ -10,20 +10,19 @@
 
 html,
 body {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    font-family: "Microsoft YaHei", sans-serif;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:"Microsoft YaHei", sans-serif;
 }
-
 /* ===========================
    页面背景
 =========================== */
 
 body {
 
-    background:
 
+    background:
         radial-gradient(
             ellipse at 50% 20%,
             rgba(120,150,255,.25),
@@ -49,9 +48,7 @@ body {
             #000000
         );
 
-
     color:white;
-
 }
 body::before {
 
@@ -121,8 +118,8 @@ body::before {
     left: 0;
     top: 0;
 
-    width: 100%;
-    height: 100%;
+    width:100%;
+    height:100%;
 
     z-index: 1;
 
@@ -139,7 +136,7 @@ body::before {
     z-index: 10;
 
     width: 100%;
-    height: 100%;
+    height: 100vh;
 
     display: flex;
 
@@ -152,9 +149,7 @@ body::before {
     text-align: center;
 
     padding: 20px;
-
 }
-
 /* 顶部文字 */
 
 .tag {
@@ -498,128 +493,99 @@ h1 {
 
 
 
-.gift-screen{
 
+
+/* ===========================
+   第三幕礼物场景
+=========================== */
+
+.gift-screen {
 
     position:fixed;
 
-
-    left:0;
-
-    top:0;
-
-
-    width:100%;
-
-    height:100%;
-
+    inset:0;
 
     z-index:30;
-
 
     display:flex;
 
     justify-content:center;
 
-    align-items:center;
+    align-items:flex-start;
 
+    width:100%;
+    height:100%;
 
     text-align:center;
-
 
     opacity:0;
 
     pointer-events:none;
 
+    overflow-y:auto;
+    overflow-x:hidden;
+
+    -webkit-overflow-scrolling:touch;
 
     transition:2s;
 
-
     background:
-
-    radial-gradient(
-        circle,
-        rgba(255,150,200,.25),
-        rgba(0,0,0,.85)
-    );
-
+        radial-gradient(
+            circle,
+            rgba(255,150,200,.25),
+            rgba(0,0,0,.85)
+        );
 
 }
 
-
-
-.gift-screen.show{
-
+.gift-screen.show {
 
     opacity:1;
 
     pointer-events:auto;
 
+}
 
+.gift-container {
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:60px 0;
+
+    position:relative;
 }
 
 
-
-
-
-
-
-
-
-
-.gift-box{
+.gift-body {
 
     position:absolute;
 
-    left:50%;
-
-    top:50%;
-
-    transform:translate(-50%,-50%);
-
-    width:150px;
-
-    height:130px;
-
-    cursor:pointer;
-
-    animation:
-    floatGift 3s infinite ease-in-out;
-
-    z-index:50;
-
-}
-
-
-
-.gift-body{
-
-
-    position:absolute;
-
-
+    left:0;
     bottom:0;
 
-
     width:150px;
-
     height:100px;
 
-
     background:
-
-    linear-gradient(
-        135deg,
-        #ff8fab,
-        #ff477e
-    );
-
+        linear-gradient(
+            135deg,
+            #ff8fab,
+            #ff477e
+        );
 
     border-radius:10px;
 
-
     font-size:60px;
-
 
     display:flex;
 
@@ -627,15 +593,11 @@ h1 {
 
     align-items:center;
 
+    z-index:1;
 
 }
 
-
-
-
-
 .gift-lid{
-
 
     position:absolute;
 
@@ -999,23 +961,7 @@ h1 {
     opacity:0;
 
 }
-.gift-container{
 
-    width:100%;
-
-    height:100%;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    position:relative;
-
-}
 .birthday-message .line1,
 .birthday-message .line2,
 .birthday-message .line3{
@@ -1149,6 +1095,47 @@ h1 {
     transition:1s ease;
 
 }
+
+
+#starTrigger {
+
+    margin-top:25px;
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6ea8ff,
+            #9b6dff
+        );
+
+    box-shadow:
+        0 0 25px rgba(120,180,255,.5);
+
+    transition:.4s;
+
+}
+
+#starTrigger:hover {
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 0 40px rgba(120,180,255,.8);
+
+}
+
 #starBtn{
 
     margin-top:25px;
@@ -1273,40 +1260,29 @@ linear-gradient(
 
     position:absolute;
 
-
     top:70px;
-
 
     width:100%;
 
-
     text-align:center;
-
 
     color:white;
 
-
     font-size:28px;
 
-
     letter-spacing:3px;
-
 
     text-shadow:
     0 0 10px white,
     0 0 20px #7aaaff;
 
-
     opacity:0;
 
-
     transition:2s;
-
 
     z-index:2;
 
 }
-
 
 
 .star-text-screen.show .star-title{
@@ -1392,27 +1368,42 @@ linear-gradient(
 
 .star-letter{
 
-    position:absolute;
+position:absolute;
 
-    bottom:100px;
+top:72%;
 
-    width:80%;
+left:50%;
 
-    text-align:center;
-
-    color:white;
-
-    font-size:20px;
-
-    line-height:2;
+transform:translate(-50%,-50%);
 
 
-    opacity:0;
+width:80%;
 
-    animation:showLetter 3s 3s forwards;
 
-    text-shadow:
-    0 0 10px #fff;
+text-align:center;
+
+
+color:white;
+
+
+font-size:20px;
+
+
+line-height:2;
+
+
+letter-spacing:1px;
+
+
+opacity:0;
+
+
+animation:
+showLetter 3s 2s forwards;
+
+
+text-shadow:
+0 0 10px rgba(255,255,255,.8);
 
 }
 
@@ -1425,3 +1416,22 @@ linear-gradient(
     }
 
 }
+
+@media(max-width:768px){
+
+    .gift-container {
+        padding:40px 20px 80px;
+    }
+
+    .gift-body {
+        width:150px;
+        height:100px;
+    }
+
+    #starTrigger {
+        font-size:16px;
+        padding:13px 28px;
+    }
+
+}
+
