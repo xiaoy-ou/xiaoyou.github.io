@@ -5,7 +5,11 @@ const textCanvas =
 document.getElementById("textCanvas");
 
 const textCtx =
-textCanvas.getContext("2d");
+textCanvas ? textCanvas.getContext("2d") : null;
+
+if(!textCanvas || !textCtx){
+    console.warn("⚠️ textCanvas 不存在，跳过星空文字系统");
+}
 
 
 textCanvas.style.position = "fixed";
@@ -210,45 +214,31 @@ function animateText(){
 
 }
 
-const starTrigger =
-document.getElementById("starTrigger");
+function startStarText(){
+
+    console.log("🌌 星空拼字启动");
 
 
-if(starTrigger){
-
-    starTrigger.addEventListener(
-    "click",
-    ()=>{
+    const starScreen =
+    document.querySelector(".star-text-screen");
 
 
-        console.log("🌌 星空拼字启动");
+    if(starScreen){
+
+        starScreen.classList.add("show");
+
+    }
 
 
-        document
-        .querySelector(".gift-screen")
-        .style.display="none";
+    if(showText)return;
 
 
-        document
-        .querySelector(".star-text-screen")
-        .classList.add("show");
+    showText=true;
 
 
-        if(showText)return;
+    createTextStars();
 
-
-        showText=true;
-
-
-        createTextStars();
-
-
-        animateText();
-
-
-    });
+    animateText();
 
 }
-
-
 

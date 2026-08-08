@@ -16,45 +16,54 @@ const music = document.getElementById("bgMusic");
 // 第一幕 → 第二幕
 // =====================
 
-startBtn.addEventListener("click",()=>{
+if(startBtn){
 
-    // 音乐渐入
-    if(music){
+    startBtn.addEventListener("click",()=>{
 
-        music.volume = 0;
 
-        music.play();
+        // 音乐渐入
+        if(music){
 
-        let volume = 0;
+            music.volume = 0;
 
-        const fade = setInterval(()=>{
+            music.play();
 
-            if(volume < 0.35){
+            let volume = 0;
 
-                volume += 0.01;
-                music.volume = volume;
+            const fade = setInterval(()=>{
 
-            }else{
+                if(volume < 0.35){
 
-                clearInterval(fade);
+                    volume += 0.01;
+                    music.volume = volume;
 
-            }
+                }else{
 
-        },100);
+                    clearInterval(fade);
 
-    }
+                }
 
-    hero.style.opacity = "0";
+            },100);
 
-    setTimeout(()=>{
+        }
 
-        hero.style.display = "none";
 
-        storyScreen.classList.add("show");
+        hero.style.opacity = "0";
 
-    },800);
 
-});
+        setTimeout(()=>{
+
+            hero.style.display = "none";
+
+            storyScreen.classList.add("show");
+
+
+        },800);
+
+
+    });
+
+}
 
 
 // =====================
@@ -83,3 +92,42 @@ giftBox.addEventListener("click",()=>{
     giftBox.classList.add("open");
 
 });
+
+// =====================
+// 第三幕 → 第四幕
+// =====================
+
+const starTrigger = document.getElementById("starTrigger");
+
+if(starTrigger){
+
+    starTrigger.addEventListener("click",()=>{
+
+        console.log("🌌 进入第四幕");
+
+        if(giftScreen){
+            giftScreen.style.display = "none";
+        }
+
+
+        const starTextScreen =
+            document.querySelector(".star-text-screen");
+
+
+        if(starTextScreen){
+
+            starTextScreen.classList.add("show");
+
+        }
+
+
+        // 启动第四幕星空文字动画
+        if(typeof startStarText === "function"){
+
+            startStarText();
+
+        }
+
+    });
+
+}
